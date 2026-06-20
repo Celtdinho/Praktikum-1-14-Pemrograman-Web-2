@@ -1,0 +1,474 @@
+ERROR - 2026-06-20 08:28:36 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\app\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\rewrite.php(44): require_once('C:\\Users\\Naufal...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\app\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\rewrite.php(44): require_once('C:\\Users\\Naufal...')
+#13 {main}
+CRITICAL - 2026-06-20 08:28:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Naufal Rafi Haryanto\\Desktop\\UAS Web\\backend-api\\public\\index.php')
+ERROR - 2026-06-20 08:29:20 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\app\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\rewrite.php(44): require_once('C:\\Users\\Naufal...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\app\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\rewrite.php(44): require_once('C:\\Users\\Naufal...')
+#13 {main}
+CRITICAL - 2026-06-20 08:29:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Naufal Rafi Haryanto\\Desktop\\UAS Web\\backend-api\\public\\index.php')
+ERROR - 2026-06-20 08:30:53 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\app\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\rewrite.php(44): require_once('C:\\Users\\Naufal...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\app\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(951): App\Controllers\AuthController->login()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\rewrite.php(44): require_once('C:\\Users\\Naufal...')
+#13 {main}
+CRITICAL - 2026-06-20 08:30:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user ''@'localhost' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\AuthController.php(25): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Naufal Rafi Haryanto\\Desktop\\UAS Web\\backend-api\\public\\index.php')
+ERROR - 2026-06-20 08:31:37 --> Error connecting to the database: mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', '', Object(SensitiveParameterValue), '', 3306, '', 0)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user ''@'localhost' (using password: NO) in C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(1565): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\BaseConnection.php(1585): CodeIgniter\Database\BaseConnection->listTables()
+#4 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Database\MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+#8 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\system\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 C:\Users\Naufal Rafi Haryanto\Desktop\UAS Web\backend-api\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+ERROR - 2026-06-20 08:35:54 --> Table 'users' already exists
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(100) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`token` VARCHAR(255) NULL,
+	`role` VARCHAR(50) NOT NULL DEFAULT \'admin\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(769): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(100) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`token` VARCHAR(255) NULL,
+	`role` VARCHAR(50) NOT NULL DEFAULT \'admin\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 3 SYSTEMPATH\Database\BaseConnection.php(686): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(100) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`token` VARCHAR(255) NULL,
+	`role` VARCHAR(50) NOT NULL DEFAULT \'admin\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 4 SYSTEMPATH\Database\Forge.php(570): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `users` (
+	`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	`username` VARCHAR(100) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`token` VARCHAR(255) NULL,
+	`role` VARCHAR(50) NOT NULL DEFAULT \'admin\',
+	`created_at` DATETIME NULL,
+	`updated_at` DATETIME NULL,
+	CONSTRAINT `pk_users` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci')
+ 5 APPPATH\Database\Migrations\20260620000001_CreateUsers.php(47): CodeIgniter\Database\Forge->createTable('users')
+ 6 SYSTEMPATH\Database\MigrationRunner.php(1014): App\Database\Migrations\CreateUsers->up()
+ 7 SYSTEMPATH\Database\MigrationRunner.php(202): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 8 SYSTEMPATH\Commands\Database\Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(null)
+ 9 SYSTEMPATH\CLI\SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::CodeIgniter\Commands\Database\{closure}()
+10 SYSTEMPATH\Commands\Database\Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+11 SYSTEMPATH\CLI\Commands.php(74): CodeIgniter\Commands\Database\Migrate->run([])
+12 SYSTEMPATH\CLI\Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+13 SYSTEMPATH\Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH\Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH\spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-06-20 09:53:56 --> CodeIgniter\HTTP\Exceptions\HTTPException: Failed to parse JSON string. Error: Syntax error
+[Method: POST, Route: login]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 406.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(406): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidJSON('Syntax error')
+ 2 APPPATH\Controllers\AuthController.php(12): CodeIgniter\HTTP\IncomingRequest->getJSON(true)
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 09:54:05 --> CodeIgniter\HTTP\Exceptions\HTTPException: Failed to parse JSON string. Error: Syntax error
+[Method: POST, Route: login]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 406.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(406): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidJSON('Syntax error')
+ 2 APPPATH\Controllers\AuthController.php(12): CodeIgniter\HTTP\IncomingRequest->getJSON(true)
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 09:54:23 --> CodeIgniter\HTTP\Exceptions\HTTPException: Failed to parse JSON string. Error: Syntax error
+[Method: POST, Route: login]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 406.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(406): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidJSON('Syntax error')
+ 2 APPPATH\Controllers\AuthController.php(12): CodeIgniter\HTTP\IncomingRequest->getJSON(true)
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 09:57:29 --> CodeIgniter\HTTP\Exceptions\HTTPException: Failed to parse JSON string. Error: Syntax error
+[Method: POST, Route: login]
+in SYSTEMPATH\HTTP\IncomingRequest.php on line 406.
+ 1 SYSTEMPATH\HTTP\IncomingRequest.php(406): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidJSON('Syntax error')
+ 2 APPPATH\Controllers\AuthController.php(12): CodeIgniter\HTTP\IncomingRequest->getJSON(true)
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\AuthController->login()
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:41 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:43 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:43 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:43 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:44 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:44 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:44 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/4]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/4')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:50 --> ParseError: syntax error, unexpected token "\"
+[Method: GET, Route: borrow/my]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/my')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:15:53 --> ParseError: syntax error, unexpected token "\"
+[Method: GET, Route: borrow/my]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/my')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:16:01 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/2]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/2')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:16:01 --> ParseError: syntax error, unexpected token "\"
+[Method: POST, Route: borrow/2]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/2')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:16:07 --> ParseError: syntax error, unexpected token "\"
+[Method: GET, Route: borrow/my]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/my')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2026-06-20 13:16:19 --> ParseError: syntax error, unexpected token "\"
+[Method: GET, Route: borrow/my]
+in APPPATH\Controllers\Borrowings.php on line 97.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\UAS Web\\backend-api\\app\\Controllers\\Borrowings.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Borrowings')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Borrowings')
+ 4 SYSTEMPATH\Router\Router.php(792): class_exists('\\App\\Controllers\\Borrowings')
+ 5 SYSTEMPATH\Router\Router.php(230): CodeIgniter\Router\Router->processRouteAttributes()
+ 6 SYSTEMPATH\CodeIgniter.php(829): CodeIgniter\Router\Router->handle('borrow/my')
+ 7 SYSTEMPATH\CodeIgniter.php(441): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

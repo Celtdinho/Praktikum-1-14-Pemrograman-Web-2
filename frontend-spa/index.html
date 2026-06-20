@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-Library - SPA</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Vue 3 (global build) -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <!-- Vue Router -->
+  <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.prod.js"></script>
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <div id="app" class="min-h-screen">
+    <!-- App will mount here -->
+    <router-view></router-view>
+  </div>
+
+  <script type="module">
+    import router from './router.js';
+
+    const { createApp } = window.Vue;
+
+    const App = {
+      template: `
+        <div>
+          <nav class="bg-white shadow p-4">
+            <div class="container mx-auto flex gap-4">
+              <a href="#/" class="font-bold">E-Library</a>
+              <a href="#/dashboard">Dashboard</a>
+              <a href="#/bookmarks">Bookmarks</a>
+            </div>
+          </nav>
+          <main class="container mx-auto p-4">
+            <router-view></router-view>
+          </main>
+        </div>
+      `
+    };
+
+    createApp(App).use(router).mount('#app');
+  </script>
+</body>
+</html>
